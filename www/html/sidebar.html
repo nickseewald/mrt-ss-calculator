@@ -1,0 +1,114 @@
+<!--
+Copyright 2016 Nicholas J. Seewald and Peng Liao
+This file is part of MRT-SS Calculator.
+
+MRT-SS Calculator is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+MRT-SS Calculator is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with MRT-SS Calculator.  If not, see <http://www.gnu.org/licenses/>.
+
+Contact the authors at nseewald@umich.edu or pengliao@umich.edu
+-->
+
+<style>
+    ol {padding-left: 30px;}
+    ul {padding-left: 15px;}
+</style>
+
+<h3>Purpose</h3>
+<p>This applet provides a sample size calculator for micro-randomized trials
+  (MRTs) based on methodology developed in
+  <a href="http://onlinelibrary.wiley.com/doi/10.1002/sim.6847/abstract">Sample
+     Size Calculations for Micro-randomized Trials in mHealth</a>
+  by Liao et al. (2016).</p>
+
+<h3>Required Inputs</h3>
+<div>
+    <ol>
+        <h4><li>Study Setup</li></h4>
+        <ul>
+            <li>Duration of the study in days.</li>
+            <li>Number of decision time points within each day.</li>
+            <li>Randomization probability, i.e. the probability of assigning the treatment at a decision time point. This can be constant, or time-varying probabilities can be specified by uploading a .csv file specifying randomization probabilities for each day or decision time.</li>
+        </ul>
+        <h4><li>Availability</li></h4>
+        <ul>
+            <li>Expected availability, i.e., the expected probability that a participant is available to receive treatment at a decision time. Treatment can only be provided when an indivudual is available; see more details on availablity below.</li>
+            <li>A pattern of expected availability, either constant or time-varying over the course of the study. Time-varying trends change over days, and can be either quadratic or linear.</li>
+        </ul>
+        <h4><li>Proximal Treatment Effect</li></h4>
+        <ul>
+            <li>A trend of proximal treatment effects, either constant or time-varying. Time-varying trends change over days, and can be either quadratic or linear.</li>
+            <ul>
+                <li><strong>Note:</strong> The <em>proximal treatment effect</em> at each decision time point is defined as the mean difference in the proximal outcome between available participants assigned a treatment versus available participants not assigned treatment. Here we only consider binary treatment. The standardized proximal effect is defined as the proximal effects divived by the average standard error throughout the study. See Liao et. al. (2016) for details.</li>
+                <li>The proximal treatment effect on each day is an average over all decision times on that day.</li>
+            </ul>
+        </ul>
+    </ol>
+</div>
+
+<h3>Outputs</h3>
+<div>
+    <ol>
+        <li>We provide both power and sample size calculation. In either case, we require a desired significance level.</li>
+        <li>Pressing the "History" button will display a list of powers and/or sample sizes calculated during the current session.</li>
+    </ol>
+</div>
+
+<h3>Additional Considerations</h3>
+<div>
+    <ol>
+        <li>In the input, we require the inputs of "Duration of the Study (Days)" and "Number of Decision Time Points per Day". The use of the word "Day" only means the treatment effect are constant within each "day". For example, suppose one is interested in conducting a 12-week study with one decision time per day and want to calculate the sample size under the conjecture that the treatment effects pretty much stay in the same level within each week. Then enter 12 and 7 under "Duration of the Study (Days)" and "Number of Decision Time Points per Day" respectively will serve the purpose.</li>
+
+        <li>When the output sample size is small, one might reconsider the following: (1) whether you are correctly or conservatively guessing the average of expected availability, (2) whether the duration of study is too long, and (3) whether the average of treatment effect is overestimated and the trend of treatment effects is too simplistic.</li>
+
+        <li>In this work, we only consider the case where proximal treatment effect within each day are identical and the trend of effects are constant, linear and quadratic. To calculate the sample size for general treatment effects, see the formula in Liao et.al (2016).</li>
+    </ol>
+</div>
+
+
+<div class="panel-group" id="sideCollapse" role="tablist" aria-multiselectable="true">
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingOne">
+			<h4 class="collapse-title">
+				<a class="collapsed" role="button" data-toggle="collapse" data-parent="#sideCollapse" href="#background" aria-expanded="false" aria-controls="background" id="backgroundtitle">
+                    <span class="glyphicon glyphicon-collapse-down" style="font-size: 80%;"></span> <strong style="font-size:20px; font-weight:500;">Additional Background Information</strong>
+				</a>
+			</h4>
+		</div>
+		<div id="background" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+			<div class="panel-body">
+				<h3>Just-in-Time Mobile Interventions</h3>
+                    <p>In just-in-time mobile interventions, treatments, provided via a mobile device, are intended to help an individual in the moment, such as engaging in an healthy behavior when an opportunity arises or successfully coping with a stressful event. The treatments are usually intended to have a proximal, near-term impact on the individual.</p>
+
+                <h3>Micro-Randomized Trials</h3>
+                    <p>In a micro-randomized trial, treatments are sequentially randomized throughout the conduct of the study, with the result that each participant may be randomized at hundreds or thousands of decision times. At a decision time, treatment options may correspond to whether or not a treatment is provided; for example, whether or not participant is provided a tailored activity suggestion. Or treatment options may be alternative types of treatment that can be provided in the same situation; for example, the activity planning treatment might have two options, asking the participant to create an activity plan for the next day or asking them to pick a plan from a list of previously created plans.  Considerations of treatment burden often imply that the randomization will not be uniform. For example, if treatment randomization probability is 0.4 and there are 5 decision time per day and if an participant is always available, activity suggestions are delivered on average 2 time points per day.</p>
+
+                <h3>Availability</h3>
+                    <p>At some decision times, feasibility, ethics or burden considerations mean that the pariticipant is unavailable for treatment, and thus treatment should not be delivered. For example, if sensors indicate that the participant is likely driving a car or the participantis currently walking, then the activity message should not be sent. Other examples of when participants are unavailable for treatment include, in the alcohol recovery setting, a "warning" treatment would only be potentially provided when sensors indicate that the participant is within 10 feet of a high-risk location or a treatment might only be provided if the participant reports a high level of craving. Individuals may be unavailable for treatmentby choice. For example, the application on the phone should permit the user to turn off the activity messages for some amount of time; this option is considered critical to maintaining participant buy-in and engagement.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<h5>Input Formatting Rules:</h5>
+					<p>All inputs must be given in decimal form (no fractions, please) and may include up to two decimal places. For example, ''0.07'' is valid input; ''7/100'' is not. Improperly-formatted input may result in unpredictable behavior or an error message. </p>
+
+<script>
+$(document).ready(function(){
+  $("#background").on("hide.bs.collapse", function(){
+    $("#backgroundtitle").html('<span class="glyphicon glyphicon-collapse-down" style="font-size: 80%;"></span> <span style="font-size: 20px;">Additional Background Information</span>');
+  });
+  $("#background").on("show.bs.collapse", function(){
+    $("#backgroundtitle").html('<span class="glyphicon glyphicon-collapse-up" style="font-size: 80%;"></span> <span style="font-size: 20px;">Additional Background Information</span>');
+  });
+});
+</script>
