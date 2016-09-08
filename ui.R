@@ -33,7 +33,8 @@ shinyUI(fluidPage(
       .shiny-output-error-validation {
         color: red;
       }
-    "))
+    ")),
+    includeScript("www/google-analytics.js")
   ),
   
   ### CSS HEADER ###
@@ -52,7 +53,7 @@ shinyUI(fluidPage(
   
   ### Introduction of MRT-SS Calculator on left-hand side panel ###
   sidebarPanel(
-    includeHTML("www/html/sidebar.html")
+    includeHTML("www/sidebar.html")
   ),
   
   ### Main Panel on the right-hand side ###
