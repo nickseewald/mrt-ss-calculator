@@ -465,7 +465,7 @@ shinyServer(function(input,output,session){
       
       if(input$P_intervene > 0 && input$P_intervene < 1){ 
         
-        N <- SampleSize (b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+        N <- SampleSize(b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
         
         if(N > 10){
           HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -489,10 +489,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             
-            N <- SampleSize (b_input, input_a, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_a, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -515,10 +515,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             
-            N <- SampleSize (b_input, input_a, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_a, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -596,7 +596,7 @@ shinyServer(function(input,output,session){
       
       if(input$P_intervene > 0 && input$P_intervene < 1){ 
         
-        N <- SampleSize (b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+        N <- SampleSize(b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
         
         if(N > 10){
           HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -620,9 +620,9 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
-            N <- SampleSize (b_input, input_c, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_c, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -645,9 +645,9 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
-            N <- SampleSize (b_input, input_c, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_c, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -724,7 +724,7 @@ shinyServer(function(input,output,session){
         
         
         
-        N <- SampleSize (b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+        N <- SampleSize(b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
         
         if(N > 10){
           HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -748,10 +748,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             
-            N <- SampleSize (b_input, input_e, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_e, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -774,10 +774,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             
-            N <- SampleSize (b_input, input_e, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_e, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -854,7 +854,7 @@ shinyServer(function(input,output,session){
         
         
         
-        N <- SampleSize (b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+        N <- SampleSize(b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
         
         if(N > 10){
           HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -878,10 +878,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             
-            N <- SampleSize (b_input, input_a, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_a, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -904,10 +904,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             
-            N <- SampleSize (b_input, input_a, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_a, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -979,7 +979,7 @@ shinyServer(function(input,output,session){
         
         
         
-        N <- SampleSize (b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+        N <- SampleSize(b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
         
         if(N > 10){
           HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -1003,10 +1003,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             
-            N <- SampleSize (b_input, input_c, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_c, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -1029,10 +1029,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             
-            N <- SampleSize (b_input, input_c, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_c, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -1106,7 +1106,7 @@ shinyServer(function(input,output,session){
         
         
         
-        N <- SampleSize (b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+        N <- SampleSize(b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
         
         if(N > 10){
           HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -1130,10 +1130,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             
-            N <- SampleSize (b_input, input_e, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_e, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -1156,10 +1156,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             
-            N <- SampleSize (b_input, input_e, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_e, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -1234,7 +1234,7 @@ shinyServer(function(input,output,session){
         
         
         
-        N <- SampleSize (b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+        N <- SampleSize(b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
         
         if(N > 10){
           HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -1258,10 +1258,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             
-            N <- SampleSize (b_input, input_a, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_a, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -1284,10 +1284,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             
-            N <- SampleSize (b_input, input_a, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_a, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -1361,7 +1361,7 @@ shinyServer(function(input,output,session){
         
         
         
-        N <- SampleSize (b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+        N <- SampleSize(b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
         
         if(N > 10){
           HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -1385,10 +1385,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             
-            N <- SampleSize (b_input, input_c, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_c, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -1411,10 +1411,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             
-            N <- SampleSize (b_input, input_c, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_c, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -1490,7 +1490,7 @@ shinyServer(function(input,output,session){
         
         
         
-        N <- SampleSize (b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+        N <- SampleSize(b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
         
         if(N > 10){
           HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -1514,10 +1514,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             
-            N <- SampleSize (b_input, input_e, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_e, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -1540,10 +1540,10 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             
-            N <- SampleSize (b_input, input_e, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+            N <- SampleSize(b_input, input_e, delta, alpha0=input$sigLev, beta0=input$power, setup=list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
             
             if(N > 10){
               HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -1637,7 +1637,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             power <- PowerCalculation(size, b_input, input_a, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=3, q=3);
             
@@ -1659,7 +1659,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability);
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             power <- PowerCalculation(size, b_input, input_a, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=3, q=3);
             
@@ -1756,7 +1756,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             power <- PowerCalculation(size, b_input, input_c, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=3, q=3);
             
@@ -1778,7 +1778,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability);
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             power <- PowerCalculation(size, b_input, input_c, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=3, q=3);
             
@@ -1876,7 +1876,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             power <- PowerCalculation(size, b_input, input_e, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=3, q=3);
             
@@ -1898,7 +1898,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability);
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             power <- PowerCalculation(size, b_input, input_e, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=3, q=3);
             
@@ -1995,7 +1995,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             power <- PowerCalculation(size, b_input, input_a, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=1, q=3);
             
@@ -2017,7 +2017,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability);
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             power <- PowerCalculation(size, b_input, input_a, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=1, q=3);
             
@@ -2108,7 +2108,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             power <- PowerCalculation(size, b_input, input_c, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=1, q=3);
             
@@ -2130,7 +2130,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability);
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             power <- PowerCalculation(size, b_input, input_c, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=1, q=3);
             
@@ -2221,7 +2221,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             power <- PowerCalculation(size, b_input, input_e, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=1, q=3);
             
@@ -2243,7 +2243,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability);
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             power <- PowerCalculation(size, b_input, input_e, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=1, q=3);
             
@@ -2335,7 +2335,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             power <- PowerCalculation(size, b_input, input_a, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=2, q=3);
             
@@ -2357,7 +2357,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability);
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             power <- PowerCalculation(size, b_input, input_a, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=2, q=3);
             
@@ -2450,7 +2450,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             power <- PowerCalculation(size, b_input, input_c, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=2, q=3);
             
@@ -2472,7 +2472,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability);
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             power <- PowerCalculation(size, b_input, input_c, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=2, q=3);
             
@@ -2566,7 +2566,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_days()$Randomization.Probability)
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
             
             power <- PowerCalculation(size, b_input, input_e, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=2, q=3);
             
@@ -2588,7 +2588,7 @@ shinyServer(function(input,output,session){
           
           delta <- as.vector(P_inter_dec()$Randomization.Probability);
           
-          if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+          if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
             
             power <- PowerCalculation(size, b_input, input_e, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=2, q=3);
             
@@ -2718,7 +2718,7 @@ shinyServer(function(input,output,session){
         {   
           ### If te randomization probability is constant ###
           delta <- input$P_intervene
-          N = SampleSize (b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+          N = SampleSize(b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
           if(N > 10){
             HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
             data_size <<- c(data_size,N)
@@ -2750,9 +2750,9 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){  ### If the uploaded file is respect to days ###
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
                 
-                N = SampleSize (b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+                N <- SampleSize(b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
                 
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -2788,9 +2788,9 @@ shinyServer(function(input,output,session){
             ### If the uploaded file is respect to decision times ###
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 
-                N = SampleSize (b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+                N = SampleSize(b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
                 
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -2859,7 +2859,7 @@ shinyServer(function(input,output,session){
         if(input$ranPro == "Constant" && input$P_intervene > 0 && input$P_intervene < 1)
         {
           delta <- input$P_intervene
-          N = SampleSize (b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+          N = SampleSize(b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
           if(N > 10){
             HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
             data_size <<- c(data_size,N)
@@ -2887,8 +2887,8 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
-                N = SampleSize (b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
+                N = SampleSize(b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
                   data_size <<- c(data_size,N)
@@ -2920,8 +2920,8 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
-                N = SampleSize (b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
+                N = SampleSize(b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
                   data_size <<- c(data_size,N)
@@ -2988,7 +2988,7 @@ shinyServer(function(input,output,session){
         if(input$ranPro == "Constant" && input$P_intervene > 0 && input$P_intervene < 1)
         {
           delta <- input$P_intervene
-          N = SampleSize (b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+          N = SampleSize(b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
           if(N > 10){
             HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
             data_size <<- c(data_size,N)
@@ -3015,8 +3015,8 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
-                N = SampleSize (b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
+                N = SampleSize(b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
                   data_size <<- c(data_size,N)
@@ -3047,8 +3047,8 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
-                N = SampleSize (b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
+                N = SampleSize(b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=3, q=3, Nmax=1000)
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
                   data_size <<- c(data_size,N)
@@ -3114,7 +3114,7 @@ shinyServer(function(input,output,session){
         if(input$ranPro == "Constant" && input$P_intervene > 0 && input$P_intervene < 1)
         {
           delta <- input$P_intervene
-          N = SampleSize (b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+          N = SampleSize(b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
           if(N > 10){
             HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
             data_size <<- c(data_size,N)
@@ -3141,9 +3141,9 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
                 
-                N = SampleSize (b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+                N = SampleSize(b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
                   data_size <<- c(data_size,N)
@@ -3174,9 +3174,9 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 
-                N = SampleSize (b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+                N = SampleSize(b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
                   data_size <<- c(data_size,N)
@@ -3240,7 +3240,7 @@ shinyServer(function(input,output,session){
         if(input$ranPro == "Constant" && input$P_intervene > 0 && input$P_intervene < 1)
         {
           delta <- input$P_intervene
-          N = SampleSize (b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+          N = SampleSize(b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
           if(N > 10){
             HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
             data_size <<- c(data_size,N)
@@ -3267,8 +3267,8 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
-                N = SampleSize (b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
+                N = SampleSize(b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
                   data_size <<- c(data_size,N)
@@ -3299,9 +3299,9 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 
-                N = SampleSize (b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000);
+                N = SampleSize(b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000);
                 
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -3367,7 +3367,7 @@ shinyServer(function(input,output,session){
         if(input$ranPro == "Constant" && input$P_intervene > 0 && input$P_intervene < 1)
         {
           delta <- input$P_intervene; 
-          N = SampleSize (b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+          N = SampleSize(b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
           
           if(N > 10){
             HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -3395,9 +3395,9 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
                 
-                N = SampleSize (b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
+                N = SampleSize(b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000)
                 
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -3429,9 +3429,9 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 
-                N = SampleSize (b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000);
+                N = SampleSize(b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=1, q=3, Nmax=1000);
                 
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -3498,7 +3498,7 @@ shinyServer(function(input,output,session){
         if(input$ranPro == "Constant" && input$P_intervene > 0 && input$P_intervene < 1)
         {
           delta <- input$P_intervene; 
-          N = SampleSize (b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
+          N = SampleSize(b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
           
           if(N > 10){
             HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -3526,9 +3526,9 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
                 
-                N = SampleSize (b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
+                N = SampleSize(b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
                 
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -3560,9 +3560,9 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 
-                N = SampleSize (b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
+                N = SampleSize(b_input, input_a, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
                 
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -3629,7 +3629,7 @@ shinyServer(function(input,output,session){
         if(input$ranPro == "Constant" && input$P_intervene > 0 && input$P_intervene < 1)
         {
           delta <- input$P_intervene; 
-          N = SampleSize (b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
+          N = SampleSize(b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
           
           if(N > 10){
             HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -3657,9 +3657,9 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
                 
-                N = SampleSize (b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
+                N = SampleSize(b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
                 
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -3691,10 +3691,10 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 
                 
-                N = SampleSize (b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
+                N = SampleSize(b_input, input_c, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
                 
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -3761,7 +3761,7 @@ shinyServer(function(input,output,session){
         if(input$ranPro == "Constant" && input$P_intervene > 0 && input$P_intervene < 1)
         {
           delta <- input$P_intervene; 
-          N = SampleSize (b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
+          N = SampleSize(b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
           
           if(N > 10){
             HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -3789,9 +3789,9 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
                 
-                N = SampleSize (b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
+                N = SampleSize(b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
                 
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -3823,10 +3823,10 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 
                 
-                N = SampleSize (b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
+                N = SampleSize(b_input, input_e, delta = delta, alpha0=input$sigLev, beta0=input$power, setup = list(days = days, occ.per.day = occ), p=2, q=3, Nmax=1000)
                 
                 if(N > 10){
                   HTML(paste("<h4 style = 'color:blue';> The required sample size is ", N, "to attain", input$power*100,"% power when the significance level is",input$sigLev,".")) 
@@ -3866,7 +3866,7 @@ shinyServer(function(input,output,session){
     }
     
     ### Generate the data frame of sample size which contains all the vectors of information we have added through the above procedure ### 
-    data = data.frame("Sample Size" = data_size, "Treatment Effect" = data_effect_size, "Average Effect" = ave_effect_size, "Availability" = data_avail_size, "Average Availability" = ave_avail_size,"Type I Error" = data_sig_size,"Power" = data_rpower,
+    delta = data.frame("Sample Size" = data_size, "Treatment Effect" = data_effect_size, "Average Effect" = ave_effect_size, "Availability" = data_avail_size, "Average Availability" = ave_avail_size,"Type I Error" = data_sig_size,"Power" = data_rpower,
                       "Randomization Probability" = data_ranPro_size)
     
     
@@ -3982,7 +3982,7 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){  ### If the uploaded file is respect to days ###
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
                 
                 power <- PowerCalculation(size, b_input, input_a, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=3, q=3);
                 
@@ -4019,7 +4019,7 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){  ### If the uploaded file is respect to decision times ###
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 
                 power <- PowerCalculation(size, b_input, input_a, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=3, q=3);
                 
@@ -4122,7 +4122,7 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
                 
                 power <- PowerCalculation(size, b_input, input_c, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=3, q=3);
                 
@@ -4155,7 +4155,7 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 
                 power <- PowerCalculation(size, b_input, input_c, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=3, q=3);
                 
@@ -4253,7 +4253,7 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
                 
                 power <- PowerCalculation(size, b_input, input_e, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=3, q=3);
                 
@@ -4286,7 +4286,7 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 
                 power <- PowerCalculation(size, b_input, input_e, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=3, q=3);
                 
@@ -4382,7 +4382,7 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
                 power <- PowerCalculation(size, b_input, input_a, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=1, q=3);
                 if(power >= 0.5){
                   HTML(paste("<h4 style = 'color:blue';> The power is ", round(power,3)*100, "% with sample size", size ,"when the significance level is",input$sigLev,"."))
@@ -4413,7 +4413,7 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 
                 power <- PowerCalculation(size, b_input, input_a, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=1, q=3);
                 
@@ -4511,7 +4511,7 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
                 power <- PowerCalculation(size, b_input, input_c, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=1, q=3);
                 if(power >= 0.5){
                   HTML(paste("<h4 style = 'color:blue';> The power is ", round(power,3)*100, "% with sample size", size ,"when the significance level is",input$sigLev,"."))
@@ -4542,7 +4542,7 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 power <- PowerCalculation(size, b_input, input_c, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=1, q=3);
                 if(power >= 0.5){
                   HTML(paste("<h4 style = 'color:blue';> The power is ", round(power,3)*100, "% with sample size", size ,"when the significance level is",input$sigLev,"."))
@@ -4635,7 +4635,7 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
                 power <- PowerCalculation(size, b_input, input_e, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=1, q=3);
                 if(power >= 0.5){
                   HTML(paste("<h4 style = 'color:blue';> The power is ", round(power,3)*100, "% with sample size", size ,"when the significance level is",input$sigLev,"."))
@@ -4666,7 +4666,7 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 power <- PowerCalculation(size, b_input, input_e, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=1, q=3);
                 if(power >= 0.5){
                   HTML(paste("<h4 style = 'color:blue';> The power is ", round(power,3)*100, "% with sample size", size ,"when the significance level is",input$sigLev,"."))
@@ -4758,7 +4758,7 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
                 power <- PowerCalculation(size, b_input, input_a, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=2, q=3);
                 if(power >= 0.5){
                   HTML(paste("<h4 style = 'color:blue';> The power is ", round(power,3)*100, "% with sample size", size ,"when the significance level is",input$sigLev,"."))
@@ -4789,7 +4789,7 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 power <- PowerCalculation(size, b_input, input_a, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=2, q=3);
                 if(power >= 0.5){
                   HTML(paste("<h4 style = 'color:blue';> The power is ", round(power,3)*100, "% with sample size", size ,"when the significance level is",input$sigLev,"."))
@@ -4884,7 +4884,7 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
                 power <- PowerCalculation(size, b_input, input_c, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=2, q=3);
                 if(power >= 0.5){
                   HTML(paste("<h4 style = 'color:blue';> The power is ", round(power,3)*100, "% with sample size", size ,"when the significance level is",input$sigLev,"."))
@@ -4915,7 +4915,7 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 power <- PowerCalculation(size, b_input, input_c, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=2, q=3);
                 if(power >= 0.5){
                   HTML(paste("<h4 style = 'color:blue';> The power is ", round(power,3)*100, "% with sample size", size ,"when the significance level is",input$sigLev,"."))
@@ -5009,7 +5009,7 @@ shinyServer(function(input,output,session){
           if(input$numbers == "re_days"){
             if(!is.null(input$file2)){
               delta <- as.vector(P_inter_days()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days){
                 power <- PowerCalculation(size, b_input, input_e, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=2, q=3);
                 if(power >= 0.5){
                   HTML(paste("<h4 style = 'color:blue';> The power is ", round(power,3)*100, "% with sample size", size ,"when the significance level is",input$sigLev,"."))
@@ -5040,7 +5040,7 @@ shinyServer(function(input,output,session){
           }else{
             if(!is.null(input$file1)){
               delta <- as.vector(P_inter_dec()$Randomization.Probability)
-              if(max(data) <= 1 && min(data) >= 0 && length(data) == input$days * input$occ_per_day){
+              if(max(delta) <= 1 && min(delta) >= 0 && length(delta) == input$days * input$occ_per_day){
                 power <- PowerCalculation(size, b_input, input_e, delta, alpha0=input$sigLev, setup = list(days = days, occ.per.day = occ), p=2, q=3);
                 if(power >= 0.5){
                   HTML(paste("<h4 style = 'color:blue';> The power is ", round(power,3)*100, "% with sample size", size ,"when the significance level is",input$sigLev,"."))
@@ -5080,7 +5080,7 @@ shinyServer(function(input,output,session){
       
     }
     ### Generate the data frame of power which contains all the vectors of information we have added through the above procedure ###
-    data = data.frame("Power" = data_power, "Treatment Effect" = data_effect_power, "Average Effect" = ave_effect_power, "Availability" = data_avail_power, "Average Availability" = ave_avail_power, "Type I Error" = data_sig_power, 
+    delta = data.frame("Power" = data_power, "Treatment Effect" = data_effect_power, "Average Effect" = ave_effect_power, "Availability" = data_avail_power, "Average Availability" = ave_avail_power, "Type I Error" = data_sig_power, 
                       "Sample Size" = data_rsize, "Randomization Probability" = data_ranPro_power )
 
   })
