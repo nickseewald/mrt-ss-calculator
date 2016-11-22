@@ -19,11 +19,13 @@
 
 library(shiny)
 library(shinyBS)
+library(shinyjs)
 source("server.R")
 
 shinyUI(fluidPage(
   titlePanel(HTML("<strong>MRT-SS Calculator</strong>: A Sample Size Calculator for Micro-Randomized Trials"), 
              windowTitle = "MRT-SS Calculator"),    
+  useShinyjs(),
   
   ####Sample Size Calculator Simple version####
   
@@ -115,7 +117,9 @@ shinyUI(fluidPage(
                                                    fileInput('file2', 'Choose a .csv file containing time-varying randomization probabilities (one per day) to upload',
                                                              accept = c('.csv')
                                                    )
-                                  )
+                                                   
+                                  ),
+                                  bsButton("file.resetbutton", "Reset file upload", style = "link")
                            ),
                            column(4,
                                   ### downloading the sample file for "respecting to days" and

@@ -138,6 +138,11 @@ shinyServer(function(input,output,session){
     )
     head(P_inter_days(), n = 5)
   })
+  
+  #### File Upload reset button
+  observeEvent(input$file.resetbutton, 
+               {reset(paste0("file", switch(input$numbers, "re_days" = 2, "re_dec" = 1)))}
+  )
 
                  #### Data generating for proximal treatment effect ####
   
